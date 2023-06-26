@@ -14,6 +14,7 @@ public class PlaceObj : MonoBehaviour
     private ARPlaneManager planeManager;
 
     private bool placementPoseIsValid = false;
+    private bool hasSpawnedObject = false;
     private GameObject spawnedObject;
 
     void Start()
@@ -26,13 +27,18 @@ public class PlaceObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnedObject == null && placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            PlaceObject();
-            placementPoseIsValid = true;
-        }
+        //if (spawnedObject == null && placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //{
+        //    PlaceObject();
+        //    placementPoseIsValid = true;
+        //}
 
-        if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //{
+        //    PlaceObject();
+        //}
+
+        if(!hasSpawnedObject && placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             PlaceObject();
         }
@@ -45,6 +51,7 @@ public class PlaceObj : MonoBehaviour
     {
         spawnedObject = Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
         Destroy(IndicatorHolder);
+        hasSpawnedObject = true;
     }
 
     private void UpdateIndicatorHolder()
@@ -75,7 +82,5 @@ public class PlaceObj : MonoBehaviour
             var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
             placementPose.rotation = Quaternion.LookRotation(cameraBearing);
         }
-
-
     }
 }

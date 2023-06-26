@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1802949, g: 0.22573808, b: 0.30694616, a: 1}
+  m_IndirectSpecularColor: {r: 0.18029517, g: 0.22573823, b: 0.30694664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -572,7 +572,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520521942}
-  - component: {fileID: 1520521941}
   - component: {fileID: 1520521943}
   m_Layer: 0
   m_Name: SpawnObject
@@ -581,20 +580,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1520521941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1520521940}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b6f9b965e794c9bbc549d27cb8b9d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSpawn: {fileID: 7303739460361335160, guid: a0dc59b2ca3714f28bf7063056d16e32, type: 3}
-  isObjectSpawn: 0
 --- !u!4 &1520521942
 Transform:
   m_ObjectHideFlags: 0
@@ -633,7 +618,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1613668860}
-  - component: {fileID: 1613668859}
   m_Layer: 0
   m_Name: IndicatorHolder
   m_TagString: Untagged
@@ -641,18 +625,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1613668859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613668858}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d021ca6db56ec4735b44ef54ffff3e76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1613668860
 Transform:
   m_ObjectHideFlags: 0
