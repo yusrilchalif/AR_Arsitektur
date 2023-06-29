@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject panelViewer;
     public bool isActive = false;
 
+    public RotateObject rotateObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +29,14 @@ public class UIManager : MonoBehaviour
         if (isActive)
         {
             panelViewer.transform.DOScaleY(0f, 0.3f).SetEase(Ease.OutSine).OnComplete(() => panelViewer.SetActive(false));
+            rotateObject.enabled = true;
         }
         else
         {
             panelViewer.SetActive(true);
             panelViewer.transform.localScale = new Vector3(1f, 0f, 1f);
             panelViewer.transform.DOScaleY(1f, 0.3f).SetEase(Ease.OutSine);
+            rotateObject.enabled = false;
         }
             
     }

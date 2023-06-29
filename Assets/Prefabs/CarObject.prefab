@@ -305,6 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.3
+  car: {fileID: 7303739460361335160}
 --- !u!1 &4188961672248956623
 GameObject:
   m_ObjectHideFlags: 0

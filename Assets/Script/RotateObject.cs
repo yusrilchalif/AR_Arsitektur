@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class RotateObject : MonoBehaviour
 {
     [SerializeField] float speed;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,3 +23,5 @@ public class RotateObject : MonoBehaviour
         }
     }
 }
+
+
