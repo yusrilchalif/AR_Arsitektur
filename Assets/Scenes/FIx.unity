@@ -607,7 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a801a0fcf5c4142b92d6ecf22f2b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPlace: {fileID: 6678358406792880019, guid: cf85c942f3905475aa7d617c3d97d440, type: 3}
+  objectToPlace: {fileID: 4601586693679407171, guid: cf85c942f3905475aa7d617c3d97d440, type: 3}
   IndicatorHolder: {fileID: 1613668858}
 --- !u!1 &1527979820
 GameObject:
