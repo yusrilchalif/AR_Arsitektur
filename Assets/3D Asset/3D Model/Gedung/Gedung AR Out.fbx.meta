@@ -202,6 +202,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Pohon
+    second: {fileID: 2100000, guid: 3f2ba49e3788a5746b60e0c3c7aff7ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: RangkaAtapBesi
     second: {fileID: 2100000, guid: eee6fa34be9ad964eb54a64b589e125e, type: 2}
   - first:
@@ -302,7 +307,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -330,9 +335,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - c595fcb0624f35a479a04c9183491b3d
-  - 9cfb035592c5ecd48b4b9a9f5b75cd21
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
