@@ -15,8 +15,9 @@ public class ButtonController : MonoBehaviour
     void Start()
     { 
         buttonStart = GetComponent<Button>();
-        buttonStart.onClick.AddListener(MoveScene);
-        buttonExit.onClick.AddListener(ExitApp);
+
+        //buttonStart.onClick.AddListener(MoveScene);
+        //buttonExit.onClick.AddListener(ExitApp);
     }
 
     // Update is called once per frame
@@ -25,13 +26,14 @@ public class ButtonController : MonoBehaviour
         
     }
 
-    void MoveScene()
+    public void MoveScene()
     {
-        sceneTransition.TransitionScene(sceneName);
+        sceneTransition.TransitionToScene(sceneName);
     }
 
-    void ExitApp()
+    public void ExitApp()
     {
         sceneTransition.ExitGame();
+        print("exit");
     }
 }

@@ -4,35 +4,47 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class SceneTransitionController : MonoBehaviour
 {
-    [SerializeField] float transitionDuration = 2.0f;
-    public Ease transitionEase;
-    
-    // Start is called before the first frame update
-    void Start()
+    public GameObject fadePanelPrefab;
+    public float fadeDuration = 5.0f;
+    public Ease fadeEase = Ease.Linear;
+
+    private GameObject fadePanel;
+
+    private void Start()
     {
-        
+        fadePanel = Instantiate(fadePanelPrefab, transform);
+        fadePanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TransitionToScene(string sceneName)
     {
-        
+        StartCoroutine(TransitionRoutine(sceneName));
     }
 
-    public void TransitionScene(string sceneName)
+    private IEnumerator TransitionRoutine(string sceneName)
     {
-        DOTween.Sequence()
-            .Append(DOTween.To(() => 1.0f, x => { }, 0.0f, transitionDuration)
-                .SetEase(transitionEase)
-                .OnComplete(() =>
-                {
-                    // Memuat scene baru setelah animasi transisi selesai
-                    SceneManager.LoadScene(sceneName);
-                })
-            );
+        fadePanel.SetActive(true);
+
+        // Fade Out
+        fadePanel.GetComponent<Image>().DOFade(1f, fadeDuration)
+            .SetEase(fadeEase);
+
+        yield return new WaitForSeconds(fadeDuration);
+
+        // Load Scene
+        SceneManager.LoadScene(sceneName);
+
+        // Fade In
+        fadePanel.GetComponent<Image>().DOFade(0f, fadeDuration)
+            .SetEase(fadeEase);
+
+        yield return new WaitForSeconds(fadeDuration);
+
+        fadePanel.SetActive(false);
     }
 
     public void ExitGame()
