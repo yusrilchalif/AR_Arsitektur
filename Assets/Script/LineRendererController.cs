@@ -14,6 +14,8 @@ public class LineRendererController : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+
+        lineRenderer.enabled = false;
     }
 
     // Update is called once per frame
@@ -24,5 +26,15 @@ public class LineRendererController : MonoBehaviour
             lineRenderer.SetPosition(0, startTransform.position);
             lineRenderer.SetPosition(1, endTransform.position);
         }
+    }
+
+    public void DisableLine()
+    {
+        lineRenderer.enabled = false;
+    }
+
+    public void EnableLine()
+    {
+        lineRenderer.enabled = true;
     }
 }

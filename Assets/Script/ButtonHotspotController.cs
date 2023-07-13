@@ -21,7 +21,7 @@ public class ButtonHotspotController : MonoBehaviour, IPointerEnterHandler, IPoi
         initialQuaternion = transform.rotation;
 
         lineRendererController = GetComponent<LineRendererController>();
-        lineRendererController.enabled = false;
+        lineRendererController.DisableLine();
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class ButtonHotspotController : MonoBehaviour, IPointerEnterHandler, IPoi
             //update position on panel Information
             Vector3 panelInfo = target.position;
             panelInfo.y += 1.5f; //custom height if needed
-            panelInfo.x += 2.0f; //custom width if needed
+            //panelInfo.x += 2.0f; //custom width if needed
             panelInformation.transform.position = panelInfo;
         }
         else
@@ -49,27 +49,32 @@ public class ButtonHotspotController : MonoBehaviour, IPointerEnterHandler, IPoi
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        transform.DOScale(new Vector3(0.008f, 0.008f, 0.008f), 0.3f);
+        transform.DOScale(new Vector3(0.02f, 0.02f, 0.02f), 0.3f);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        transform.DOScale(new Vector3(0.005f, 0.005f, 0.005f), 0.3f);
+        transform.DOScale(new Vector3(0.01497409f, 0.01497409f, 0.01497409f), 0.3f);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         OnPointerExit(eventData);
-        ShowPopUP();
-
-        Debug.Log("Button clicked");
+        TogglePopUp();
     }
 
-    private void ShowPopUP()
+    void TogglePopUp()
     {
-        panelInformation.SetActive(true);
-        lineRendererController.enabled = true;
+        if (panelInformation.activeSelf)
+        {
+            panelInformation.SetActive(false);
+            lineRendererController.DisableLine();
+        }
+        else
+        {
+            panelInformation.SetActive(true);
+            lineRendererController.EnableLine();
+        }
     }
-
     
 }
