@@ -7,8 +7,9 @@ public class FPSLimit : MonoBehaviour
     private int fpsLimit = 30;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = fpsLimit;
     }
 
